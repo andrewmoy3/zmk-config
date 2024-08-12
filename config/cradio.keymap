@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
+#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
 
 / {
     behaviors {
@@ -33,18 +33,20 @@
     keymap {
         compatible = "zmk,keymap";
         default_layer {
+
+
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  X       │  F       │  D       │  P       │  Q       │   │  J       │  ', "    │  O       │  U       │  /       │
+            &kp X      &kp F      &kp D      &kp P      &kp Q          &kp J      &kp SQT    &kp O      &kp U      &kp KP_SLASH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+        //│  N       │  S       │  T       │  C       │  Y       │   │  M       │  H       │  A       │  E       │ I        │
+            HRML(N,        S,         T,         C)     &kp Y          &kp M      HRMR(H,        A,         E,        I)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  B       │  V       │  K       │  G       │  W       │   │  Z       │  L       │ :        │ . >      │ , <      │
+            &kp B      &kp V      &kp K      &kp G      &kp W          &kp Z      &kp L      &kp COLON  &kp DOT    &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &lt 1 TAB   &kp SPACE     &lt 1 BSPC  &lt 2 R
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
