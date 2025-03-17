@@ -61,7 +61,7 @@
             &trans      &trans     &trans     &trans     &trans        &kp PG_UP  &kp HOME  &kp UARW    &kp END    &trans 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ PAGE DOWN│ LEFT     │ DOWN     │ RIGHT    │          │
-          &kp ESCAPE &ht LALT LC(X) &ht LCTRL LC(C) &ht LSHFT LC(V)    &kp PG_DN  &kp DOWN   &kp LARW   &kp DARW   &kp RARW   &trans
+    &kp ESCAPE &ht LALT LC(X) &ht LCTRL LC(C) &ht LSHFT LC(V) &trans    &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
