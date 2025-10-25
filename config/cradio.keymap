@@ -31,40 +31,15 @@
             compatible = "zmk,behavior-macro";
             label = "Vim Copy";
             #binding-cells = <0>;
-            bindings = <
-                &kp LS(QUOTE)   // Shift + '
-                &kp PLUS        // +
-                &kp Y
-            >;
+            bindings = <&kp DQT>, <&kp PLUS>, <&kp Y>;
         };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
         FUNC {
-            if-layers = <1 3>;
-            then-layer = <4>;
-        };
-    };
-
-    macros {
-        cut: zed_em_kay {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp Z &kp M &kp K>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-        combo_back {
-            key-positions = <15 16>; // Positions of TAB and R
-            bindings = <&mo 3>;
-            timeout-ms = <50>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -91,7 +66,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ┌──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ ^        |  4       │  5       │  6       │ *        |
-           &trans     &kp LBKT   &kp LCBR   &kp RCBR   &kp RBKT       &kp CARET  &kp N4     &kp N5     &kp N6      &kp STAR
+           &trans     &kp LBKT   &kp LBRC   &kp RBRC   &kp RBKT       &kp CARET  &kp N4     &kp N5     &kp N6      &kp ASTRK
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ $        │  1       │  2       │  3       │  0       │
            &kp LPAR   &kp PLUS   &kp MINUS  &kp EQUAL  &kp RPAR       &kp DLLR   &kp N1     &kp N2     &kp N3     &kp N0      
@@ -108,10 +83,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ PAGE DOWN│ BACK    │ UP       │ END      │ PAGE UP  │
-           &trans     &trans     &kp TILDE  &kp GRAVE  &kp BSLH       &kp PG_DN  &kp LC(LARW)&kp UARW  &kp LC(RARW) &kp PG_UP 
+           &trans     &trans     &kp TILDE  &kp GRAVE  &kp BSLH       &kp PG_DN  &kp LC(LEFT) &kp UP  &kp LC(RIGHT) &kp PG_UP 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-           &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp SLASH       &kp HOME   &kp LARW   &kp DARW   &kp RARW   &kp END
+           &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp SLASH       &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
            &kp EXCL   &kp AT     &kp HASH   &kp QMARK  &kp AMPS       &trans     &trans     &trans     &trans     &kp BSPC
@@ -131,7 +106,7 @@
            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp DELETE      &kp C_VOL_DN &kp F1     &kp F2     &kp F3   &bt BT_SEL 1
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│Caps Lock │ Bri Down │ Bri Up   │Play/Pause│ Print Sc │   │ MUTE     │  F7      │  F8      │  F9      │          │
-           &kp CAPS   &kp C_BRI_DN &kp C_BRI_UP &kp C_PP &kp PSCRN    &kp C_MUTE &kp F7     &kp F8     &kp F9     &bt BT_SEL 2
+           &kp CAPS   &kp C_BRI_DN &kp C_BRI_UP &kp C_PP &kp PSCRN    &kp C_MUTE &kp F7     &kp F8     &kp F9     &bt BT_SEL 0
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
